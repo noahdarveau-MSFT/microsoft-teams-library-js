@@ -20,7 +20,7 @@ Thu, 08 Sep 2022 17:11:49 GMT
 - Updated documentation for many properties on `Context` interface
 - Updated comments on items marked with the `@internal` tag to make it clear they are intended for Microsoft use only and removed some `@internal` items from dev documentation. Removed `initializePrivateApis` from the privateAPIs file, an unexported and hidden no-op function.
 - Added missing `HostClientType` values so correct `Runtime` is generated for `teams.fullTrust.joinedTeams` and `webStorage` capabilities.
-- 1. Renamed `filePath` field to `webkitRelativePath` 2. Removed two validation checks for `destinationFolder` fields 3. Added an optional field `provider` in callback of `addCloudStorageProvider` API
+- Renamed `filePath` field to `webkitRelativePath`. Removed two validation checks for `destinationFolder` fields. Added an optional field `provider` in callback of `addCloudStorageProvider` API
 
 ## 2.2.0
 
@@ -351,7 +351,7 @@ Tue, 19 Apr 2022 16:08:56 GMT
 ### Major changes
 
 - Removed `PostMessageChannel` returned from `dialog.open`, added separate function `sendMessageToDialog` to make up for missing functionality
-- Change DeepLinkParameters not to use subEntity* anymore
+- Change DeepLinkParameters not to use subEntity\* anymore
 - Added `isSupported` checks to all functions and unit test cases in the following capabilities:
   - `chat`
   - `conversations`
