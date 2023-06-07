@@ -3,7 +3,9 @@
 }
 
 export function getContextAsync() {
-  return microsoftTeams.app.getContext();
+  const ret = microsoftTeams.app.getContext();
+  console.log(ret);
+  return ret;
 }
 
 export function setCurrentFrame(contentUrl, websiteUrl) {
@@ -19,7 +21,9 @@ export function registerChangeConfigHandler() {
 }
 
 export function getTabInstances(tabInstanceParameters) {
-  return microsoftTeams.pages.tabs.getTabInstances(tabInstanceParameters);
+  const ret = microsoftTeams.pages.tabs.getTabInstances(tabInstanceParameters);
+  console.log(ret);
+  return ret;
 }
 
 export function getMruTabInstances(tabInstanceParameters) {

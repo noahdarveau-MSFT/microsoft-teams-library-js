@@ -28,6 +28,10 @@ else
 
     bool IsHostedInM365 = false;
 
+    TabInstanceArray tabInstances;
+
+    TeamsContext context;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
@@ -42,6 +46,12 @@ else
             if (IsHostedInM365) {
                 await MicrosoftTeams.InitializeAsync();
                 await MicrosoftTeams.notifySuccess();
+            
+                context = await MicrosoftTeams.GetTeamsContextAsync();
+                Console.WriteLine(context.page);
+
+                tabInstances = await MicrosoftTeams.GetTabInstances(new TabInstanceParameters(false, false));
+                Console.WriteLine(tabInstances.teamTabs[0].tabName);
             }
 
         }

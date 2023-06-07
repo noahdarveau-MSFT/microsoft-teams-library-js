@@ -13,6 +13,10 @@ public class MicrosoftTeams : InteropModuleBase
         return InvokeVoidAsync("initializeAsync");
     }
 
+    public Task<TabInstanceArray> GetTabInstances(TabInstanceParameters tabInstanceParameters) {
+        return InvokeAsync<TabInstanceArray>("getTabInstances", tabInstanceParameters);
+    }
+
     public Task<TeamsContext> GetTeamsContextAsync()
     {
         return InvokeAsync<TeamsContext>("getContextAsync");
