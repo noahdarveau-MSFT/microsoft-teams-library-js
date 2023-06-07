@@ -17,6 +17,18 @@ public class MicrosoftTeams : InteropModuleBase
         return InvokeAsync<TabInstanceArray>("getTabInstances", tabInstanceParameters);
     }
 
+    public Task NavigateToTab(TabInstance tabInstance) {
+        return InvokeVoidAsync("navigateToTab", tabInstance);
+    }
+
+    public Task NavigateToPage(string pageId) {
+        return InvokeVoidAsync("navigateToPage", pageId);
+    }
+
+    public Task<TabInstanceArray> GetMRUTabInstances(TabInstanceParameters tabInstanceParameters) {
+        return InvokeAsync<TabInstanceArray>("getMruTabInstances", tabInstanceParameters);
+    }
+
     public Task<TeamsContext> GetTeamsContextAsync()
     {
         return InvokeAsync<TeamsContext>("getContextAsync");

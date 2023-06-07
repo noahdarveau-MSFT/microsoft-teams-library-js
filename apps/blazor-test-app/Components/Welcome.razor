@@ -30,8 +30,6 @@ else
 
     TabInstanceArray tabInstances;
 
-    TeamsContext context;
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
@@ -46,12 +44,13 @@ else
             if (IsHostedInM365) {
                 await MicrosoftTeams.InitializeAsync();
                 await MicrosoftTeams.notifySuccess();
-            
-                context = await MicrosoftTeams.GetTeamsContextAsync();
-                Console.WriteLine(context.page);
-
+        
                 tabInstances = await MicrosoftTeams.GetTabInstances(new TabInstanceParameters(false, false));
-                Console.WriteLine(tabInstances.teamTabs[0].tabName);
+                Console.WriteLine("TabNames: " + tabInstances.TeamTabs[0].TabName + ", " + tabInstances.TeamTabs[1].TabName);
+
+                await MicrosoftTeams.NavigateToTab(tabInstances.TeamTabs[1]);
+                await MicrosoftTeams.NavigateToPage("test");
+                
             }
 
         }

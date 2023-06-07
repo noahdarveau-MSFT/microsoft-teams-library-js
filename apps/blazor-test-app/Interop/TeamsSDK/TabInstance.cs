@@ -1,8 +1,15 @@
 namespace Blazor_Test_App.Interop.TeamsSDK;
 
+
+public class TabInstanceArray {
+
+  public TabInstance[] TeamTabs { get; set; }
+
+}
+
 public class TabInstance {
 
-  public string channelId { get; set; }
+  public string ChannelId { get; set; }
 
   public bool? ChannelIsFavorite { get; set; }
 
@@ -14,7 +21,7 @@ public class TabInstance {
 
   public string LastViewUnixEpochTime { get; set; }
 
-  public string tabName { get; set; }
+  public string TabName { get; set; }
 
   public string TeamId { get; set; }
 
@@ -38,11 +45,5 @@ public class TabInstanceParameters{
   public bool? FavoriteChannelsOnly { get; set; }
 
   public bool? FavoriteTeamsOnly { get; set; }
-
-}
-
-public class TabInstanceArray {
-
-  public TabInstance[] teamTabs { get; set; }
 
 }

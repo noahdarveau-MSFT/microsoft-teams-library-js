@@ -42,6 +42,10 @@ export function navigateToTab(tabInstance) {
   return microsoftTeams.pages.tabs.navigateToTab(tabInstance);
 }
 
+export function navigateToPage(pageId) {
+  return microsoftTeams.pages.currentApp.navigateTo(pageId);
+}
+
 // Settings module
 export function registerOnSaveHandler(settings) {
   microsoftTeams.pages.config.registerOnSaveHandler((saveEvent) => {
